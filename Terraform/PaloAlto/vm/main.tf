@@ -4,7 +4,9 @@
 # PaloAlto official GitHub: https://github.com/PaloAltoNetworks/google-cloud-vmseries-ha-tutorial
 # I have created below main.tf with respect to my requirement. It creates server satisfying all the paloalto rules as per its official doc June 2024
 # image path for gcp marketplace : image = "projects/paloaltonetworksgcp-public/global/images/vmseries-flex-byol-1102"
-
+# After this craetion one has to create unmanaged instance group (UIG) for instance (e.g if creating one PaloAlto insance then 1 unmanged instance group having the same instance.
+# In case of multiple PaloAlto vm create multiple UIG having single PaloAlto instace in it.
+# We can add multiple backend to our loadbalancer.
 
 resource "google_compute_instance" "instance" {      # put instance resource name as per your need
 
